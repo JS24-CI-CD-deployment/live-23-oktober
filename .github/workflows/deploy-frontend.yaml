@@ -24,9 +24,11 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
+        working-directory: ./todo-app
         run: npm install
 
       - name: Build dist
+        working-directory: ./todo-app
         run: npm run build
 
       - name: Deploy to AWS S3
