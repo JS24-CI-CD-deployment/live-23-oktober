@@ -27,3 +27,9 @@ jobs:
       - name: Push Docker image
         run: |
           docker push zocomchristoffer/js24-todo-api
+
+      - name: Deploy
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_URL }}
+        run: |
+          curl "$deploy_url"
